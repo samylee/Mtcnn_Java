@@ -13,8 +13,8 @@ Windows10, Eclipse-win32, JRE1.8-x86(JRE1.7 is too low for OpenCV version), Open
 ![image](https://github.com/samylee/Mtcnn_Java/blob/master/result.jpg)
 
 # Attention
-If your JVM heap memory is too low, it is recommended to expand to 1GB.
-Just set: Run -> Run Configurations... -> (x) = Arguments -> VM arguments(add "-Xmx1024m")
+If your JVM heap memory is too low, it is recommended to expand to `1GB`.
+Just set: Run -> Run Configurations... -> (x) = Arguments -> VM arguments(add `-Xmx1024m`)
 
 # Reference
 https://blog.csdn.net/samylee
