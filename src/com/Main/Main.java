@@ -13,8 +13,6 @@ import org.opencv.core.Scalar;
 import org.opencv.highgui.HighGui;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
-//import org.opencv.videoio.VideoCapture;
-//import org.opencv.videoio.Videoio;
 import org.opencv.videoio.VideoCapture;
 import org.opencv.videoio.Videoio;
 
