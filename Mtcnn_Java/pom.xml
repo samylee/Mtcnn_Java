@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>io.face</groupId>
+	<artifactId>extract-mtcnn-face</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<properties>
+		<openpnp-opencv.version>4.5.3-4</openpnp-opencv.version>
+		<lombok.version>1.18.24</lombok.version>
+		<kernel.biometricsdk.version>1.2.1-SNAPSHOT</kernel.biometricsdk.version>
+		<kernel.bioconverter.version>1.2.1-SNAPSHOT</kernel.bioconverter.version>
+		<spring.boot.version>2.0.2.RELEASE</spring.boot.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>io.mosip</groupId>
+			<artifactId>kernel-bio-converter</artifactId>
+			<version>${kernel.bioconverter.version}</version>
+			<classifier>lib</classifier>
+		</dependency>
+		<dependency>
+			<groupId>org.openpnp</groupId>
+			<artifactId>opencv</artifactId>
+			<version>${openpnp-opencv.version}</version>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<useReleaseProfile>false</useReleaseProfile>
+					<releaseProfiles>release</releaseProfiles>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+				</configuration>
+			</plugin>
+			<plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-assembly-plugin</artifactId>
+	            <version>3.1.1</version>
+	            <configuration>
+	               <descriptorRefs>
+	                  <descriptorRef>jar-with-dependencies</descriptorRef>
+	               </descriptorRefs>
+	               <archive>
+	                  <!-- <manifest>
+	                     <addClasspath>true</addClasspath>
+	                     <mainClass>registrationtest.runapplication.RegistrationMain</mainClass>
+	                  </manifest>
+	                  -->
+	               </archive>
+	            </configuration>
+	            <executions>
+	               <execution>
+	                  <id>make-assembly</id>
+	                  <phase>package</phase>
+	                  <goals>
+	                     <goal>single</goal>
+	                  </goals>
+	               </execution>
+	            </executions>
+	         </plugin>
+		</plugins>
+	</build>
+
+</project>
